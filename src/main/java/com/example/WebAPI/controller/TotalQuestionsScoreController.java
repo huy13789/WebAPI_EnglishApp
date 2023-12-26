@@ -15,10 +15,10 @@ public class TotalQuestionsScoreController {
     private TotalQuestionsScoreService service;
 
     @PostMapping("/save")
-    public ResponseEntity<?> saveTotalScore(@RequestBody TotalQuestionsScore totalScore) {
+    public ResponseEntity<String> saveTotalScore(@RequestBody TotalQuestionsScore totalScore) {
         try {
             TotalQuestionsScore savedScore = service.saveTotalScore(totalScore);
-            return ResponseEntity.ok(savedScore);
+            return ResponseEntity.ok(savedScore.getTotalScoreId().toString());
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("Error saving total score: " + e.getMessage());

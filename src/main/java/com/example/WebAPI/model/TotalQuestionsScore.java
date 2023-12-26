@@ -2,6 +2,9 @@ package com.example.WebAPI.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
+
 @Data
 @Entity
 @Setter
@@ -25,4 +28,11 @@ import lombok.*;
 
     @Column(name = "total_score", nullable = true)
     private double totalScore;
+
+    @OneToMany(mappedBy = "totalQuestionsScore", cascade = CascadeType.ALL)
+    private List<QuestionsScore> questionsScores;
+
+    public Long getTotalScoreId() {
+        return totalScoreId;
+    }
 }

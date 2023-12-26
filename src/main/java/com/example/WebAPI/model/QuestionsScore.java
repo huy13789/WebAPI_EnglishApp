@@ -23,5 +23,9 @@ public class QuestionsScore {
     private Answers userAnswer;
 
     @Column(name = "is_correct", nullable = false)
-    private boolean isCorrect;
+    private Boolean  isCorrect;
+
+    @ManyToOne
+    @JoinColumn(name = "total_questions_score_id", nullable = false)
+    private TotalQuestionsScore totalQuestionsScore;
 }

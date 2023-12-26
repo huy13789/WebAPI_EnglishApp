@@ -20,19 +20,19 @@ public class Questions {
     @Size(max = 250, message = "questions must be less than 250 characters")
     private String questions;
 
-    @Column(name = "answersA", length = 50, nullable = false)
+    @Column(name = "answersA", length = 50, nullable = true)
     @Size(max = 50, message = "Answers must be less than 50 characters")
     private String answersA;
 
-    @Column(name = "answersB", length = 50, nullable = false)
+    @Column(name = "answersB", length = 50, nullable = true)
     @Size(max = 50, message = "Answers must be less than 50 characters")
     private String answersB;
 
-    @Column(name = "answersC", length = 50, nullable = false)
+    @Column(name = "answersC", length = 50, nullable = true)
     @Size(max = 50, message = "Answers must be less than 50 characters")
     private String answersC;
 
-    @Column(name = "answersD", length = 50, nullable = false)
+    @Column(name = "answersD", length = 50, nullable = true)
     @Size(max = 50, message = "Answers must be less than 50 characters")
     private String answersD;
 
